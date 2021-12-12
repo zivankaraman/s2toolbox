@@ -2,7 +2,9 @@
 fichiers <- list.files("KML", full.names = TRUE)
 for (i in 1:length(fichiers)) {
     x <- ParseKML(fichiers[i])
+    print(sf::st_z_range(x))
 }
+
 
 
 

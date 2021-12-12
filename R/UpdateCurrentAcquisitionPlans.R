@@ -67,9 +67,6 @@ function(past = FALSE, verbose = FALSE, keep = TRUE)
         }
     }
 
-    # discard the (useless) Z dimension from KML files
-    S2_current_acquisition_plans <- sf::st_zm(S2_current_acquisition_plans)
-
     if (keep) {
         assign("S2_current_acquisition_plans", S2_current_acquisition_plans, envir = globalenv())
     }

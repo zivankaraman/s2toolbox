@@ -17,3 +17,7 @@ catalog[with(catalog, order(mission, timespan)), ]
 
 fic3 <- paste0("KML/", catalog$kml[7])
 plan3 <- ParseKML(fic3)
+
+
+kml <- "C:/R/Packages/s2toolbox/KML/Sentinel-2B_MP_ACQ_KML_20211209T120000_20211227T150000.kml"
+kml <- "C:/R/Packages/s2toolbox/KML/Sentinel-2A_MP_ACQ_KML_20211209T120000_20211220T150000.kml"

@@ -25,6 +25,10 @@ function(aoi, currentAcquisitionPlans, all = FALSE)
         # drop st_zm in future
         currentAcquisitionPlans <- sf::st_zm(S2_current_acquisition_plans)
     }
+    if (nrow(aoi) > 1) {
+        warning("aoi has > 1 feature, only the first one will be used")
+        aoi <- aoi[1, ]
+    }
     # make sure the same CRS is used
     if (sf::st_crs(aoi) != sf::st_crs(currentAcquisitionPlans)) {
         aoi <- sf::st_transform(aoi, crs = sf::st_crs(currentAcquisitionPlans))
@@ -38,20 +42,27 @@ function(aoi, currentAcquisitionPlans, all = FALSE)
     tiles <- FindTiles(aoi)
 
     # find the time zone
-    centre <- sf::st_coordinates(sf::st_centroid(aoi))
+    centre <- sf::st_coordinates(sf::st_centroid(sf::st_geometry(aoi)))
     tz <- lutz::tz_lookup_coords(centre[, "Y"], centre[, "X"], method = "accurate")
     # make "nice" position
     longitude <- gsub("d", "°", as.character(dd2dms(centre[, "X"], NS = FALSE)))
     latitude <- gsub("d", "°", as.character(dd2dms(centre[, "Y"], NS = TRUE)))
     pos <- paste(longitude, latitude, sep = ", ")
 
-    attr(zone, "Tiles") <- unlist(tiles)
+    attr(zone, "Tiles") <- tiles
     attr(zone, "TZ") <- tz
     attr(zone, "Position") <- pos
 
     zone <- zone[with(zone, order(ObservationTimeStart)), ]
+
+    zone[, "Tiles"] <- rep(NA_character_, nrow(zone))
+    my_tiles <- S2_world_tiles[tiles, ]
+    for (i in 1:nrow(zone)) {
+        zone[i, "Tiles"] <- paste(my_tiles$tile[unlist(sf::st_intersects(zone[i, ], my_tiles))], collapse = "/")
+    }
+
     row.names(zone) <- NULL
 
-    return(zone)
+    return(zone[, c(1:12, 14, 13)])
 }
 
