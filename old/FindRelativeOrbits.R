@@ -4,17 +4,17 @@
 #' @param orbits PARAM_DESCRIPTION
 #' @return OUTPUT_DESCRIPTION
 #' @details DETAILS
-#' @examples 
+#' @examples
 #' \dontrun{
 #' if(interactive()){
 #'  #EXAMPLE1
 #'  }
 #' }
-#' @seealso 
+#' @seealso
 #'  \code{\link[sp]{is.projected}},\code{\link[sp]{spTransform}},\code{\link[sp]{bbox-methods}},\code{\link[sp]{char2dms}}
 #'  \code{\link[rgeos]{gContains}}
 #'  \code{\link[lutz]{tz_lookup_coords}}
-#' @export 
+#' @export
 #' @source \url{http://somewhere.important.com/}
 #' @importFrom sp proj4string spTransform bbox dd2dms
 #' @importFrom rgeos gContainsProperly
