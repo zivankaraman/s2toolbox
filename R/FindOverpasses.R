@@ -18,7 +18,7 @@
 #' @source \url{http://somewhere.important.com/}
 #' @importFrom sf st_zm st_crs st_transform st_intersects st_coordinates st_centroid st_geometry
 #' @importFrom lutz tz_lookup_coords
-FindAcquisitionPlans <-
+FindOverpasses <-
 function(aoi, currentAcquisitionPlans, all = FALSE)
 {
     if (missing(currentAcquisitionPlans) & exists("S2_current_acquisition_plans")) {
