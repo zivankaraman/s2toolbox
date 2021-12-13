@@ -1,9 +1,38 @@
+#' @title FUNCTION_TITLE
+#' @description FUNCTION_DESCRIPTION
+#' @param n PARAM_DESCRIPTION
+#' @return OUTPUT_DESCRIPTION
+#' @details DETAILS
+#' @examples 
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @export 
+#' @source \url{http://somewhere.important.com/}
 Shift <-
 function(n)
 {
     c(n + 100.0, n/2.0 + 50.0)
 }
 
+#' @title FUNCTION_TITLE
+#' @description FUNCTION_DESCRIPTION
+#' @param p PARAM_DESCRIPTION
+#' @return OUTPUT_DESCRIPTION
+#' @details DETAILS
+#' @examples 
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @seealso 
+#'  \code{\link[sf]{st_coordinates}}
+#' @export 
+#' @source \url{http://somewhere.important.com/}
+#' @importFrom sf st_coordinates
 GetBootomRight <-
 function(p)
 {
@@ -57,12 +86,40 @@ setClass("DMS",
     dms
 }
 
+#' @title FUNCTION_TITLE
+#' @description FUNCTION_DESCRIPTION
+#' @param x PARAM_DESCRIPTION
+#' @param ... PARAM_DESCRIPTION
+#' @return OUTPUT_DESCRIPTION
+#' @details DETAILS
+#' @examples 
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @export 
+#' @source \url{http://somewhere.important.com/}
 as.double.DMS <- function(x, ...) {
     dd <- x@deg + x@min/60 + x@sec/3600
     dd <- ifelse(x@WS, -dd, dd)
     dd
 }
 
+#' @title FUNCTION_TITLE
+#' @description FUNCTION_DESCRIPTION
+#' @param x PARAM_DESCRIPTION
+#' @param ... PARAM_DESCRIPTION
+#' @return OUTPUT_DESCRIPTION
+#' @details DETAILS
+#' @examples 
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @export 
+#' @source \url{http://somewhere.important.com/}
 as.numeric.DMS <- function(x, ...) {
     if (!inherits(x, "DMS")) stop("not a DMS object")
     as.double.DMS(x)
@@ -70,6 +127,20 @@ as.numeric.DMS <- function(x, ...) {
 
 setAs("DMS", "numeric", function(from) as.numeric.DMS(from))
 
+#' @title FUNCTION_TITLE
+#' @description FUNCTION_DESCRIPTION
+#' @param x PARAM_DESCRIPTION
+#' @param ... PARAM_DESCRIPTION
+#' @return OUTPUT_DESCRIPTION
+#' @details DETAILS
+#' @examples 
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @export 
+#' @source \url{http://somewhere.important.com/}
 as.character.DMS <- function(x, ...) {
     if (!inherits(x, "DMS")) stop("not a DMS object")
     if (!x@NS) tag <- c("W", "E")

@@ -3,6 +3,9 @@
 \name{ParseKML}
 \alias{ParseKML}
 \title{FUNCTION_TITLE}
+\source{
+\url{http://somewhere.important.com/}
+}
 \usage{
 ParseKML(kml)
 }

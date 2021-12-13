@@ -3,6 +3,9 @@
 \name{FindAcquisitionPlans}
 \alias{FindAcquisitionPlans}
 \title{FUNCTION_TITLE}
+\source{
+\url{http://somewhere.important.com/}
+}
 \usage{
 FindAcquisitionPlans(aoi, currentAcquisitionPlans, all = FALSE)
 }
@@ -30,6 +33,6 @@ if(interactive()){
 }
 }
 \seealso{
-\code{\link[sf]{st_zm}},\code{\link[sf]{st_crs}},\code{\link[sf]{st_transform}},\code{\link[sf]{geos_binary_pred}},\code{\link[sf]{st_coordinates}},\code{\link[sf]{geos_unary}}
+\code{\link[sf]{st_zm}},\code{\link[sf]{st_crs}},\code{\link[sf]{st_transform}},\code{\link[sf]{geos_binary_pred}},\code{\link[sf]{st_coordinates}},\code{\link[sf]{geos_unary}},\code{\link[sf]{st_geometry}}
 \code{\link[lutz]{tz_lookup_coords}}
 }

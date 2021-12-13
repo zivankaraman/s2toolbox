@@ -3,8 +3,16 @@
 \name{UpdateCurrentAcquisitionPlans}
 \alias{UpdateCurrentAcquisitionPlans}
 \title{FUNCTION_TITLE}
+\source{
+\url{http://somewhere.important.com/}
+}
 \usage{
-UpdateCurrentAcquisitionPlans(past = FALSE, verbose = FALSE, keep = TRUE)
+UpdateCurrentAcquisitionPlans(
+  past = FALSE,
+  verbose = FALSE,
+  keep = TRUE,
+  save = TRUE
+)
 }
 \arguments{
 \item{past}{PARAM_DESCRIPTION, Default: FALSE}
@@ -12,6 +20,8 @@ UpdateCurrentAcquisitionPlans(past = FALSE, verbose = FALSE, keep = TRUE)
 \item{verbose}{PARAM_DESCRIPTION, Default: FALSE}
 
 \item{keep}{PARAM_DESCRIPTION, Default: TRUE}
+
+\item{save}{PARAM_DESCRIPTION, Default: TRUE}
 }
 \value{
 OUTPUT_DESCRIPTION

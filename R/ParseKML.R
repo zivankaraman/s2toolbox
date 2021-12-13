@@ -3,17 +3,17 @@
 #' @param kml PARAM_DESCRIPTION
 #' @return OUTPUT_DESCRIPTION
 #' @details DETAILS
-#' @examples
+#' @examples 
 #' \dontrun{
 #' if(interactive()){
 #'  #EXAMPLE1
 #'  }
 #' }
-#' @seealso
+#' @seealso 
 #'  \code{\link[xml2]{read_xml}},\code{\link[xml2]{xml_ns_strip}},\code{\link[xml2]{xml_find_all}},\code{\link[xml2]{xml_children}},\code{\link[xml2]{xml_text}},\code{\link[xml2]{as_list}}
 #'  \code{\link[sf]{st_as_sf}}
-#' @rdname ParseKML
-#' @export
+#' @export 
+#' @source \url{http://somewhere.important.com/}
 #' @importFrom xml2 read_xml xml_ns_strip xml_find_all xml_parent xml_text as_list
 #' @importFrom sf st_as_sf
 ParseKML <- function(kml) {

@@ -11,8 +11,8 @@
 #' }
 #' @seealso 
 #'  \code{\link[sf]{st_crs}},\code{\link[sf]{st_transform}},\code{\link[sf]{geos_binary_pred}}
-#' @rdname FindTiles
 #' @export 
+#' @source \url{http://somewhere.important.com/}
 #' @importFrom sf st_crs st_transform st_intersects
 FindTiles <-
 function(aoi)

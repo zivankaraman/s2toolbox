@@ -3,18 +3,19 @@
 #' @param past PARAM_DESCRIPTION, Default: FALSE
 #' @param verbose PARAM_DESCRIPTION, Default: FALSE
 #' @param keep PARAM_DESCRIPTION, Default: TRUE
+#' @param save PARAM_DESCRIPTION, Default: TRUE
 #' @return OUTPUT_DESCRIPTION
 #' @details DETAILS
-#' @examples
+#' @examples 
 #' \dontrun{
 #' if(interactive()){
 #'  #EXAMPLE1
 #'  }
 #' }
-#' @rdname UpdateCurrentAcquisitionPlans
-#' @export
+#' @export 
+#' @source \url{http://somewhere.important.com/}
 UpdateCurrentAcquisitionPlans <-
-function(past = FALSE, verbose = FALSE, keep = TRUE)
+function(past = FALSE, verbose = FALSE, keep = TRUE, save = TRUE)
 {
     # scrape the acquisition-plans page at ESA to get list of KML files
     texte <- readLines("https://sentinel.esa.int/web/sentinel/missions/sentinel-2/acquisition-plans")
@@ -69,8 +70,14 @@ function(past = FALSE, verbose = FALSE, keep = TRUE)
 
     if (keep) {
         assign("S2_current_acquisition_plans", S2_current_acquisition_plans, envir = globalenv())
+        dir.exists("~/s2toolbox")
     }
-
+    if (save) {
+        if (!dir.exists("~/.s2toolbox"))  {
+            ans <- dir.create("~/.s2toolbox")
+        }
+        save(S2_current_acquisition_plans, file = "~/.s2toolbox/S2_current_acquisition_plans.rda")
+    }
     invisible(S2_current_acquisition_plans)
 }
 

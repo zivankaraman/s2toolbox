@@ -5,18 +5,18 @@
 #' @param all PARAM_DESCRIPTION, Default: FALSE
 #' @return OUTPUT_DESCRIPTION
 #' @details DETAILS
-#' @examples
+#' @examples 
 #' \dontrun{
 #' if(interactive()){
 #'  #EXAMPLE1
 #'  }
 #' }
-#' @seealso
-#'  \code{\link[sf]{st_zm}},\code{\link[sf]{st_crs}},\code{\link[sf]{st_transform}},\code{\link[sf]{geos_binary_pred}},\code{\link[sf]{st_coordinates}},\code{\link[sf]{geos_unary}}
+#' @seealso 
+#'  \code{\link[sf]{st_zm}},\code{\link[sf]{st_crs}},\code{\link[sf]{st_transform}},\code{\link[sf]{geos_binary_pred}},\code{\link[sf]{st_coordinates}},\code{\link[sf]{geos_unary}},\code{\link[sf]{st_geometry}}
 #'  \code{\link[lutz]{tz_lookup_coords}}
-#' @rdname FindAcquisitionPlans
-#' @export
-#' @importFrom sf st_zm st_crs st_transform st_intersects st_coordinates st_centroid
+#' @export 
+#' @source \url{http://somewhere.important.com/}
+#' @importFrom sf st_zm st_crs st_transform st_intersects st_coordinates st_centroid st_geometry
 #' @importFrom lutz tz_lookup_coords
 FindAcquisitionPlans <-
 function(aoi, currentAcquisitionPlans, all = FALSE)

@@ -21,8 +21,8 @@
 #' @seealso 
 #'  \code{\link[sf]{st_geometry}}
 #'  \code{\link[maps]{map}}
-#' @rdname PlotTiles
 #' @export 
+#' @source \url{http://somewhere.important.com/}
 #' @importFrom sf st_geometry
 #' @importFrom maps map
 PlotTiles <-

@@ -4,8 +4,19 @@ library(sinew)
 sinew::sinew_opts$set(add_fields = c("details", "examples", "seealso", "export", "source"))
 
 # roxygenize source files
-ans <- sinew::makeOxyFile(input = "R", overwrite = TRUE, verbose = FALSE, print = FALSE)
-sinew::rmOxygen("./R/internals.R")
+# ans <- sinew::makeOxyFile(input = "R", overwrite = TRUE, verbose = FALSE, print = FALSE)
+
+# fichiers <- list.files("R", full.names = TRUE)
+# for (i in 1:length(fichiers)) sinew::rmOxygen(fichiers[i])
+# sinew::rmOxygen("./R/internals.R")
+
+fichiers <- list.files("R", full.names = TRUE)
+fichiers <- setdiff(fichiers, c("R/internals.R", "R/zzz.R"))
+for (i in 1:length(fichiers)) {
+    ans <- sinew::makeOxyFile(input = fichiers[i], overwrite = TRUE, verbose = FALSE, print = FALSE)
+}
+
+
 
 # remove old Rd files
 rc <- unlink("./man", recursive = TRUE, force = TRUE)

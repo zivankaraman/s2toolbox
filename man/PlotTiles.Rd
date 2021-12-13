@@ -3,6 +3,9 @@
 \name{PlotTiles}
 \alias{PlotTiles}
 \title{FUNCTION_TITLE}
+\source{
+\url{http://somewhere.important.com/}
+}
 \usage{
 PlotTiles(
   x,
