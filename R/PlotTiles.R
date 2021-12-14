@@ -51,7 +51,7 @@ function(x, aoi, tile_col = NA,
 
     if (!missing(aoi)) {
         plot(sf::st_geometry(aoi), border = aoi_border, col = aoi_col, add = TRUE)
-        # re-plot tiles over world map
+        # re-plot tiles over aoi
         plot(sf::st_geometry(tiles), border = tile_border, col = tile_col, add = TRUE, ...)
     }
 

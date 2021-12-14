@@ -16,6 +16,11 @@ function(p)
     koords[which(zkoords[ , "X"] > 0 & zkoords[ ,"Y"] < 0), ]
 }
 
+Between <-
+function(x, left, right)
+{
+    x >= left & x <= right
+}
 
 # function copied from sp::dms
 

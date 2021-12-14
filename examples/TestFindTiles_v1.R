@@ -17,9 +17,9 @@ library(sf)
 PlotTiles(FindTiles(aoi), aoi, main = "title", lwd = 2, world = T)
 
 
-p = FindAcquisitionPlans(aoi)
-
+# p = FindAcquisitionPlans(aoi)
+overpasses = FindOverpasses(aoi)
 fr = sf::read_sf("C:/AzureDevOps/R-scripts-country-maps/Shapes/FR.shp")
-p = FindAcquisitionPlans(fr)
+p = FindOverpasses(fr)
 
 for (i in 1:nrow(p)) print(st_intersects(p[i, ], S2_world_tiles[attr(p, "Tiles"), ]))
